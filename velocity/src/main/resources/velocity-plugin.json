@@ -1,0 +1,11 @@
+{
+  "id": "oneversionremake",
+  "name": "OneVersionRemake",
+  "version": "${project.version}",
+  "description": "${project.description}",
+  "authors": [
+    "Andre_601",
+    "siberanka"
+  ],
+  "main": "com.andre601.oneversionremake.velocity.VelocityCore"
+}

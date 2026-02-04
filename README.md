@@ -6,27 +6,28 @@
 <img src="https://rawcdn.githack.com/Andre601/OneVersionRemake/997bd22eaa8f57b26e44ca17f86251b43c425ac6/wiki/images/ovr.png" width="200" align="right" alt="OneVersionRemake">
 </a>
 
-# OneVersionRemake
+# OneVersionRemake (v4.0.0)
+
+**Authors:** Andre_601, siberanka
 
 OneVersionRemake is a plugin for Velocity and BungeeCord based on the original concept from [OneVersion] but with a lot of changes and improved code.
 
-## Changes from the original
+## Changes in v4.0.0
 
-OneVersionRemake has a few specifici differences that make it better than the original:
+OneVersionRemake v4.0.0 brings significant improvements:
 
-- **Improved Code**  
-  The Code has been improved. The plugin no longer has everything in a single class and instead has things split up for better readability and understanding.  
-  Additionally are commonly used parts shared between the different plugin variants to reduce duplicate code.
-- **Better configuration**  
-  The configuration received a general overhaul.  
-  Not only is Configurate used for better config handling, but new features and settings have been added for you to use. No longer is a weird placeholder needed to add a line-break.
-- **Placeholders to display MC Versions**  
-  OneVersionRemake uses a JSON file containing known MC protocols and their versions.  
-  This allows you to use placeholders such as `{version}` and `{clientVersion}` in messages to display the Network's supported version and the client's used version respectively.  
-  The JSON file is automatically updated on proxy restarts (Can be disabled) and you can modify it to change the text displayed or add your own MC versions.
-- **Allow the versions you want**  
-  The configuration is very simple to understand. Just add the version protocols you want to allow on your network, reload OneVersionRemake and enjoy.  
-  The [Wiki] has a page listing all supported version protocols.
+- **Performance & Optimization**
+  - **Java 21 Native**: Built for Java 21 to utilize Virtual Threads (where supported) and modern language features.
+  - **Zero Reflection**: Removed reflection-based logic for improved performance during ping events.
+  - **Lightweight**: Replaced the heavy `OkHttp` library with Java's built-in `HttpClient`, creating smaller JARs and faster execution.
+
+- **Better Configuration**
+  - **Configurate**: Uses Configurate for reliable YAML handling.
+  - **Custom Protocols**: New `CustomProtocols` section in `config.yml` allows you to define support for future Minecraft versions (e.g., 1.21.11) instantly without plugin updates.
+
+- **Placeholders to display MC Versions**
+  - Uses a JSON file containing known MC protocols and their versions.
+  - Caching implemented for "Allowed Versions" strings to minimize CPU usage.
 
 ## Downloads
 <a href="https://modrinth.com/plugin/oneversionremake" target="_blank">
@@ -47,7 +48,7 @@ You can build your own version of OneVersionRemake from this source.
 
 You need:
 
-- Java (Obviously)
+- **Java 21** or newer (Mandatory)
 - Maven
 - Git-based terminal (i.e. Git-scm for windows)
 
@@ -57,7 +58,7 @@ To clone the repository, first choose where you want to store the folder and ope
 Next, run the following command:
 
 ```bash
-git clone https://github.com/Andre601/OneVersionRemake
+git clone https://github.com/siberanka/OneVersionRemake
 ```
 
 After everything has been cloned, head over to the now generated `OneVersionRemake` folder by using `cd OneVersionRemake` in your terminal.
